@@ -69,7 +69,7 @@ function getCurrentTimeIndex() {
   return index
 }
 
-const currentIndex = getCurrentTimeIndex()
+let currentIndex = getCurrentTimeIndex()
 const currentIntervalTime = ref(getIntervalTime())
 
 // 距离结束时间的时间间隔
@@ -80,7 +80,7 @@ function getIntervalTime() {
   const [_, end] = timeList[currentIndex].time.split('-')
   const [endHour, endMinute] = end.split(':')
   const endTime = Number.parseInt(endHour) * 60 + Number.parseInt(endMinute)
-  const currentTime = Number.parseInt(hour) * 60 + Number.parseInt(minute)
+  const currentTime = hour * 60 + minute
   return endTime - currentTime
 }
 
