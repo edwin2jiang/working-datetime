@@ -18,7 +18,7 @@ const timeList = [
   },
   {
     time: '19:00-20:00',
-    action: '工作 + 准备日报',
+    action: '工作+准备日报',
   },
   {
     time: '20:00-22:00',
@@ -110,8 +110,10 @@ function getNextIndex() {
             时间
           </div>
           <div class="mt-4">
-            <div v-for="item in timeList" :key="item.time" class="flex justify-between">
-              <div>{{ item.time }}</div>
+            <div v-for="item in timeList" :key="item.time" class="flex flex-col justify-between md:flex-row">
+              <div class="font-bold">
+                {{ item.time }}
+              </div>
               <div>{{ item.action }}</div>
             </div>
           </div>
